@@ -1,7 +1,8 @@
-# Boilerplate Node-TypeScript Rest API.
-Uses nodejs, typescript, sequelize and postgreSql, to create rest Api.
+# MyRandomApi Node-TypeScript Rest API.
 
-![Build Status](https://gitlab.com/Mucilon/ts-api/badges/master/build.svg)
+API with random functions that were created from studies, test and training.
+
+![Build Status](https://gitlab.com/Mucilon/my-random-api/badges/master/build.svg)
 
 ## Features
 - Node.js
@@ -29,40 +30,3 @@ Uses nodejs, typescript, sequelize and postgreSql, to create rest Api.
 - Unit Coverage: `npm run unit-coverage`
 - Integration Coverage: `npm run integration-coverage`
 
-## Architecture
-```
-Server
-├── api
-│   ├── api.ts
-│   ├── resposeHandlers.ts
-│   └── routes.ts
-├── config
-│   ├── config.json
-│   ├── env
-│   │   ├── config.ts
-│   │   ├── debbuger.env.ts
-│   │   ├── development.env.ts
-│   │   ├── test.env.ts
-│   │   └── testlocal.env.ts
-│   └── test
-│       ├── helpers.ts
-│       └── mocha.opts
-├── migrations
-│   └── 20190521212458-create-user.js
-├── models
-│   ├── index.ts
-│   └── user.ts
-├── modules
-│   ├── auth
-│   │   ├── auth.ts
-│   │   └── integration.test.ts
-│   └── user
-│       ├── controller.ts
-│       ├── integration.test.ts
-│       ├── interface.ts
-│       ├── routes.ts
-│       ├── service.ts
-│       └── unit.test.ts
-├── auth.ts
-└── server.ts
-```
