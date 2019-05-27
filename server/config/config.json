@@ -2,7 +2,7 @@
     "test":{
         "username": "postgres",
         "password": "pgroot",
-        "database": "ts-api-test",
+        "database": "my-random-db-test",
         "host": "postgres",
         "dialect": "postgres"
     }
