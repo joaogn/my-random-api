@@ -6,7 +6,7 @@ test api:
   - postgres:10.8 
   variables:
     NODE_ENV: test
-    POSTGRES_DB: ts-api-test
+    POSTGRES_DB: my-random-db-test
     POSTGRES_USER: postgres
     POSTGRES_PASSWORD: pgroot
     POSTGRES_HOST: postgres
