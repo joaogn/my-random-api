@@ -30,13 +30,13 @@ gulp.task('copy-opts', function(){
 gulp.task('copy-migration-config', function(){
 
     return gulp.src('server/config/config.json',{ allowEmpty: true })
-                .pipe(gulp.dest('dist/server/config'));
+                .pipe(gulp.dest('dist/config'));
 });
 
 gulp.task('build', function(){
 
     return gulp.src('server/migrations/*',{ allowEmpty: true })
-                .pipe(gulp.dest('dist/server/migrations'));
+                .pipe(gulp.dest('dist/migrations'));
 
 });
 
