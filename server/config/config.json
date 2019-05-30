@@ -5,5 +5,13 @@
         "database": "my-random-db-test",
         "host": "postgres",
         "dialect": "postgres"
+    },
+
+    "testlocal":{
+        "username": "postgres",
+        "password": "pgroot",
+        "database": "my-random-db-test",
+        "host": "localhost",
+        "dialect": "postgres"
     }
 }

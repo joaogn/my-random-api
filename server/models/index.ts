@@ -10,8 +10,7 @@ const Sequelize = require('sequelize');
 const basename = path.basename(__filename);
 const config = require('../config/env/config')();
 const env = config.env || 'development';
-
- const db:any = {};   //original is const db = {}; Changed to go through TypeScript types
+const db:any = {};   //original is const db = {}; Changed to go through TypeScript types
 
 let sequelize;
 if (config.dbURL) {
@@ -38,5 +37,6 @@ Object.keys(db).forEach(modelName => {
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
+
 
 module.exports = db;
