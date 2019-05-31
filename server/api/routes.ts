@@ -5,6 +5,7 @@ import UserRoutes from '../modules/user/routes';
 import TokenRoutes from '../modules/auth/auth';
 import AuthorRoutes from '../modules/author/routes';
 import PostRoutes from '../modules/post/routes';
+import AvCalculatorRoutes from '../modules/avcalculator/routes';
 
 //Class responsible for starting the API routes, request authentication
 //and call the modules responsible for executing the route
@@ -33,6 +34,8 @@ class Routes {
         app.route('/api/post/:id').get(PostRoutes.findOne);
         app.route('/api/post/:id/update').put(PostRoutes.update);
         app.route('/api/post/:id/destroy').delete(PostRoutes.destroy);
+
+        app.route('/api/avcalculator/getrwyinuse').get(AvCalculatorRoutes.getRwyInUse)
     }
 
 }
