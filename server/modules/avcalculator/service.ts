@@ -14,19 +14,19 @@ class avCalculator implements Iavcalculator{
         
         return new Bluebird<Iavcalculator>((resolve, reject) => {
             if ((dir != 'W') && (dir != 'E')){
-                reject();
+                reject('Error Direction Wrong, this W and E');
             }
             if ((rwy1 <0) || ((rwy1*10) > 360)){
-                reject();
+                reject('Error rwy1 Wrong, this 0 to 36');
             }
             if ((rwy2 <0) || ((rwy2*10) > 360)){
-                reject();
+                reject('Error rwy2 Wrong, this 0 to 36');
             }
             if ((wind <0) || (wind > 360)){
-                reject();
+                reject('Error wind Wrong, this 0 to 360');
             }
             if ((dec <0) || (dec > 360)){
-                reject();
+                reject('Error dec Wrong, this 0 to 360');
             }
             let crossangle:number;
             if (dir == 'W'){
