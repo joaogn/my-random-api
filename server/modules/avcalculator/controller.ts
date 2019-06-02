@@ -14,9 +14,16 @@ class avCalculatorController {
     constructor(){};
 
     getRwyInUse(req: Request, res: Response){
-
+        const variables = {
+            rwy1:  Number(req.params.rwy1),
+            rwy2: Number(req.params.rwy2),
+            wind: Number(req.params.wind),
+            dec: Number(req.params.dec),
+            dir: req.params.dir
+            
+        }
         avCalculator
-        .runwayInUse()
+        .runwayInUse(variables)
         .then(_.partial(Handlers.onSucess, res))
         .catch(_.partial(Handlers.onError, res, 'Error Calculate Runway in Use'));
 

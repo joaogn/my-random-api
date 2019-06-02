@@ -35,7 +35,7 @@ class Routes {
         app.route('/api/post/:id/update').put(PostRoutes.update);
         app.route('/api/post/:id/destroy').delete(PostRoutes.destroy);
 
-        app.route('/api/avcalculator/getrwyinuse').get(AvCalculatorRoutes.getRwyInUse)
+        app.route('/api/avcalculator/getrwyinuse/:rwy1/:rwy2/:wind/:dec/:dir').get(AvCalculatorRoutes.getRwyInUse)
     }
 
 }

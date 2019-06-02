@@ -13,7 +13,7 @@ describe('AvCalculator Integration Tests', ()=> {
     describe('GET /api/avcalculator/getrwyinuse', ()=>{
         it('Return Runway in use', done =>{ 
             request(app)
-                .get(`/api/avcalculator/getrwyinuse`)
+                .get(`/api/avcalculator/getrwyinuse/10/28/120/21/W`)
                 .set('Content-Type','application/json')
                 .end((error,res) =>  {
                     expect(res.status).to.equal(HTTPStatus.OK);
