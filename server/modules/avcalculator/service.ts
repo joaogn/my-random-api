@@ -1,4 +1,4 @@
-import {Iavcalculator,rwyInUse,descentIdeal} from './interface';
+import {Iavcalculator,rwyInUse,descentIdeal,hpa2inhg,inhg2hpa} from './interface';
 import Bluebird from 'bluebird';
 const model = require('../../models');
 
@@ -72,6 +72,24 @@ class avCalculator implements Iavcalculator{
             resolve(descentIdeal({idealofdescent:Math.ceil(result)}))     
 
         });
+
+    }
+
+    hpaToInhg({hpa}: any): Bluebird<Iavcalculator>{
+
+        return new Bluebird<Iavcalculator>((resolve, reject) => {
+            const result: number =  parseFloat( (hpa * 0.02953).toFixed(2));
+            resolve( hpa2inhg({inhg:result}) );
+        });
+
+    }
+
+   inhgToHpa({inhg}: any): Bluebird<Iavcalculator>{
+
+    return new Bluebird<Iavcalculator>((resolve, reject) => {
+        const result: number =  Math.round(inhg * 33.86389);
+        resolve( inhg2hpa({hpa:result}) );
+    });
 
     }
 

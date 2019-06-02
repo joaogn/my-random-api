@@ -40,8 +40,30 @@ class avCalculatorController {
         avCalculator
         .idealOfDescent(variables)
         .then(_.partial(Handlers.onSucess, res))
-        .catch(_.partial(Handlers.onError, res, 'Error Calculate Runway in Use'));
+        .catch(_.partial(Handlers.onError, res, 'Error Calculate Ideal of Descent'));
 
+    }
+
+    hpaToInhg(req: Request, res: Response){
+        const variables = {
+            hpa:Number(req.params.hpa),
+        }  
+
+        avCalculator
+        .hpaToInhg(variables)
+        .then(_.partial(Handlers.onSucess, res))
+        .catch(_.partial(Handlers.onError, res, 'Error pass hpa to inhg'));
+    }
+
+    inhgToHpa(req: Request, res: Response){
+        const variables = {
+            inhg:Number(req.params.inhg),
+        }  
+
+        avCalculator
+        .inhgToHpa(variables)
+        .then(_.partial(Handlers.onSucess, res))
+        .catch(_.partial(Handlers.onError, res, 'Error pass inhg to hpa'));
     }
 
 }

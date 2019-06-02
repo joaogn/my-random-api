@@ -38,5 +38,33 @@ describe('AvCalculator Integration Tests', ()=> {
         });
     });
 
+    describe('GET /api/avcalculator/hpatoinhg/:hpa', ()=>{
+        it('Return hpa to inhg', done =>{ 
+            request(app)
+                .get(`/api/avcalculator/hpatoinhg/1013`)
+                .set('Content-Type','application/json')
+                .end((error,res) =>  {
+                    expect(res.status).to.equal(HTTPStatus.OK);
+                    expect(res.body.payload).to.have.all.keys(['inhg']);
+                    expect(res.body.payload.inhg).to.be.equal(29.91)
+                    done(error);
+                })
+        });
+    });
+
+    describe('GET /api/avcalculator/inhgtphpa/:inhg', ()=>{
+        it('Return hpa to inhg', done =>{ 
+            request(app)
+                .get(`/api/avcalculator/inhgtohpa/29.91`)
+                .set('Content-Type','application/json')
+                .end((error,res) =>  {
+                    expect(res.status).to.equal(HTTPStatus.OK);
+                    expect(res.body.payload).to.have.all.keys(['hpa']);
+                    expect(res.body.payload.hpa).to.be.equal(1013);
+                    done(error);
+                })
+        });
+    });
+
 
 });

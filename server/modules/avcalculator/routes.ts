@@ -17,6 +17,14 @@ class avCalculatorRoutes {
         return avCalculatorController.idealOfDescent(req,res);
     }
 
+    gethpaToInhg(req: Request, res: Response){
+        return avCalculatorController.hpaToInhg(req,res);
+    }
+
+    getinhgToHpa(req: Request, res: Response){
+        return avCalculatorController.inhgToHpa(req,res);
+    }
+
 
 
 }

@@ -37,6 +37,8 @@ class Routes {
 
         app.route('/api/avcalculator/getrwyinuse/:rwy1/:rwy2/:wind/:dec/:dir').get(AvCalculatorRoutes.getRwyInUse);
         app.route('/api/avcalculator/idealofdescent/:crzAlt/:targetAlt/:descentRate/:speed').get(AvCalculatorRoutes.getIdealOfDescent)
+        app.route('/api/avcalculator/hpatoinhg/:hpa').get(AvCalculatorRoutes.gethpaToInhg);
+        app.route('/api/avcalculator/inhgtohpa/:inhg').get(AvCalculatorRoutes.getinhgToHpa);
     }
 
 }
