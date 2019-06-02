@@ -1,4 +1,4 @@
-import {Iavcalculator,rwyInUse} from './interface';
+import {Iavcalculator,rwyInUse,descentIdeal} from './interface';
 import Bluebird from 'bluebird';
 const model = require('../../models');
 
@@ -45,11 +45,31 @@ class avCalculator implements Iavcalculator{
                 }
             }
 
-            if(crossangle < 90){
+            if(crossangle <=90){
                 resolve(rwyInUse({rwyinuse:rwy1}));
             }else{
                 resolve(rwyInUse({rwyinuse:rwy2}));
             }
+
+        });
+
+    }
+
+
+    idealOfDescent({crzAlt,targetAlt,descentRate,speed}:any): Bluebird<Iavcalculator>{
+        
+        return new Bluebird<Iavcalculator>((resolve, reject) => {
+
+            if(targetAlt > crzAlt){
+                reject('target alt > crz alt');
+            }
+            if( (crzAlt<0) || (targetAlt<0) || (descentRate<0) || (speed<0)  ){
+                reject('value negative');
+            }
+
+            const result:number =  ( ( (crzAlt-targetAlt) / descentRate )/60 )*speed;
+
+            resolve(descentIdeal({idealofdescent:Math.ceil(result)}))     
 
         });
 

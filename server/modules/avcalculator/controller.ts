@@ -26,8 +26,21 @@ class avCalculatorController {
         .runwayInUse(variables)
         .then(_.partial(Handlers.onSucess, res))
         .catch(_.partial(Handlers.onError, res, 'Error Calculate Runway in Use'));
+    }
 
+    idealOfDescent(req: Request, res: Response){
 
+        const variables = {
+            crzAlt:Number(req.params.crzAlt),
+            targetAlt:Number(req.params.targetAlt),
+            descentRate:Number(req.params.descentRate),
+            speed:Number(req.params.speed)
+        }
+
+        avCalculator
+        .idealOfDescent(variables)
+        .then(_.partial(Handlers.onSucess, res))
+        .catch(_.partial(Handlers.onError, res, 'Error Calculate Runway in Use'));
 
     }
 

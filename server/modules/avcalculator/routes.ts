@@ -13,6 +13,10 @@ class avCalculatorRoutes {
         return avCalculatorController.getRwyInUse(req,res);
     }
 
+    getIdealOfDescent(req: Request, res: Response){
+        return avCalculatorController.idealOfDescent(req,res);
+    }
+
 
 
 }

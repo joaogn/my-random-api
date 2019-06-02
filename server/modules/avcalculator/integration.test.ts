@@ -24,5 +24,19 @@ describe('AvCalculator Integration Tests', ()=> {
         });
     });
 
+    describe('GET /api/avcalculator/idealofdescent', ()=>{
+        it('Return ideal of descent', done =>{ 
+            request(app)
+                .get(`/api/avcalculator/idealofdescent/24000/2000/1500/220`)
+                .set('Content-Type','application/json')
+                .end((error,res) =>  {
+                    expect(res.status).to.equal(HTTPStatus.OK);
+                    expect(res.body.payload).to.have.all.keys(['idealofdescent']);
+                    expect(res.body.payload.idealofdescent).to.be.equal(54);
+                    done(error);
+                })
+        });
+    });
+
 
 });
