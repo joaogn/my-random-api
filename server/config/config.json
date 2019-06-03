@@ -1,17 +1,17 @@
 {
     "test":{
-        "username": "postgres",
-        "password": "pgroot",
+        "username": "root",
+        "password": "default",
         "database": "my-random-db-test",
-        "host": "postgres",
-        "dialect": "postgres"
+        "host": "mysql",
+        "dialect": "mysql"
     },
 
     "testlocal":{
-        "username": "postgres",
-        "password": "pgroot",
+        "username": "root",
+        "password": "default",
         "database": "my-random-db-test",
         "host": "localhost",
-        "dialect": "postgres"
+        "dialect": "mysql"
     }
 }

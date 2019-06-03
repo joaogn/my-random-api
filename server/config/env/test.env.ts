@@ -1,13 +1,10 @@
-
 module.exports = {
-    env: 'debbuger',
+    env: 'test',
     db: 'my-random-db-test',
-    dialect: 'postgres',
-    username: 'postgres',
-    password: 'pgroot',
-    host: 'postgres',
+    dialect: 'mysql',
+    username: 'root',
+    password: 'default',
+    host: 'mysql',
     serverPort: 3000,
-    pgPort: 5432,
-    dbURL: 'postgres://postgres:pgroot@postgres:5432/my-random-db-test',
     secret: 'S3cr3t'
 }
