@@ -9,9 +9,8 @@ test api:
     MYSQL_DATABASE: "my-random-db-test"
     MYSQL_ROOT_PASSWORD: "default"
   before_script:
-    - apt-get install -y mysql-server mysql-client libmysqlclient-dev
+    - apt-get update
     - npm i -g mysql2 sequelize sequelize-cli gulp-cli
-    - echo "SELECT 'OK';" | mysql --user=root --password="$MYSQL_ROOT_PASSWORD" --host=mysql "$MYSQL_DATABASE"
     - cd server/
     - sequelize db:migrate --env test
     - cd ../
