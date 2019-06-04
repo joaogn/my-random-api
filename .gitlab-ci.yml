@@ -4,13 +4,13 @@ test api:
   stage: test
   services:
   - mysql:8.0.16
-    command: --default-authentication-plugin=mysql_native_password
   variables:
     NODE_ENV: test
     MYSQL_DATABASE: "my-random-db-test"
     MYSQL_ROOT_PASSWORD: "default"
   before_script:
-    - apt-get update
+    - apt-get update && apt-get --assume-yes install mysql-client
+    - mysql --user=root --password="$MYSQL_ROOT_PASSWORD" --default-authentication-plugin=mysql_native_password
     - npm i -g mysql2 sequelize sequelize-cli gulp-cli
     - mysqld --default-authentication-plugin=mysql_native_password
     - cd server/
