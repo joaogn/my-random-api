@@ -10,7 +10,7 @@ test api:
     MYSQL_ROOT_PASSWORD: "default"
   before_script:
     - apt-get update && apt-get --assume-yes install mysql-client
-    - mysql --user=root --password="$MYSQL_ROOT_PASSWORD" --default-authentication-plugin=mysql_native_password
+    - mysql --user=root --password="$MYSQL_ROOT_PASSWORD" ALTER USER 'root'@'mysql' IDENTIFIED WITH mysql_native_password BY '$MYSQL_ROOT_PASSWORD';
     - npm i -g mysql2 sequelize sequelize-cli gulp-cli
     - mysqld --default-authentication-plugin=mysql_native_password
     - cd server/
