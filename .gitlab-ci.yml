@@ -4,8 +4,7 @@ test api:
   stage: test
   services:
     - name: mysql:8.0.16
-      command: ["mysqld", "--character-set-server=utf8mb4", "--collation-server=utf8mb4_unicode_ci", "--default-authentication-plugin=mysql_native_password"]
-
+      command: ["--default-authentication-plugin=mysql_native_password"]
   variables:
     NODE_ENV: test
     MYSQL_DATABASE: "my-random-db-test"
