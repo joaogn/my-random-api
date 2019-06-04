@@ -1,5 +1,5 @@
 module.exports = {
-    env: 'test',
+    env: 'testlocal',
     db: 'my-random-db-test',
     dialect: 'mysql',
     username: 'root',
