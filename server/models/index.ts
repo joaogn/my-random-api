@@ -16,7 +16,10 @@ let sequelize;
 if (config.dbURL) {
   sequelize = new Sequelize(config.dbURL);
 } else {
-  sequelize = new Sequelize(config.db, config.username, config.password);
+  sequelize = new Sequelize(config.db, config.username, config.password,{
+    host: config.host,
+    dialect: config.dialect
+  });
 }
 
 fs
