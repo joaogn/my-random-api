@@ -35,7 +35,7 @@ class User implements IUser {
         .then(createUser);
     }
 
-    public update (id: number, user: any) {
+    public update (id: number, user: any): Promise<[number, IUser[]]> {
       return Users.update(user, {
         where: { id },
         fields: ['name', 'email', 'password'],
