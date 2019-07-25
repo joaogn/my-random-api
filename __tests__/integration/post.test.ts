@@ -1,7 +1,7 @@
 import request from 'supertest';
 import app from '../../src/api/api';
 import HTTPStatus from 'http-status';
-import { PostModel, AuthorModel } from '../../src/models';
+import { Posts, Authors } from '../../src/models';
 
 describe('Post Integration Tests', () => {
   const authorDefault = {
@@ -27,10 +27,10 @@ describe('Post Integration Tests', () => {
   // before each test is checked the database synchronization,
   // the whole database is erased, and a known user is created to maintain good practices
   beforeEach(async () => {
-    await AuthorModel.destroy({ where: {} });
-    await PostModel.destroy({ where: {} });
-    await AuthorModel.create(authorDefault);
-    await PostModel.create(postDefault);
+    await Authors.destroy({ where: {} });
+    await Posts.destroy({ where: {} });
+    await Authors.create(authorDefault);
+    await Posts.create(postDefault);
   });
 
   describe('GET /api/post/all', () => {

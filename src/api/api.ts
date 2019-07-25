@@ -8,8 +8,8 @@ import Routes from './routes';
 import Handlers from './resposeHandlers';
 import Auth from '../auth';
 import graphqlHTTP from 'express-graphql';
+import cors from 'cors';
 import { createSchema } from '../graphql/createSchema';
-
 // class responsible for setting up and starting routes the API
 
 class Api {
@@ -22,6 +22,7 @@ class Api {
 
     private async middleware () {
       this.express.use(morgan('dev'));
+      this.express.use(cors());
       this.express.use(bodyParser.urlencoded({ extended: true }));
       this.express.use(bodyParser.json());
       this.express.use(Handlers.errorHandlerApi);

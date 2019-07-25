@@ -15,6 +15,7 @@ class Routes {
     app.route('/api/users/all').get(UserController.getAll);
     app.route('/api/users/create').post(UserController.createUser);
     app.route('/api/users/:id').all(auth.config().authenticate()).get(UserController.getById);
+    app.route('/api/users/email/:email').all(auth.config().authenticate()).get(UserController.getByEmail);
     app.route('/api/users/:id/update').put(UserController.updateUser);
     app.route('/api/users/:id/destroy').all(auth.config().authenticate()).delete(UserController.deleteUser);
     app.route('/token').post(TokenRoutes.auth);

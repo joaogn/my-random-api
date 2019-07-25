@@ -3,7 +3,7 @@ import HTTPStatus from 'http-status';
 import request from 'supertest';
 import app from '../../src/api/api';
 import faker from 'faker';
-import { UserModel } from '../../src/models';
+import { Users } from '../../src/models';
 // const model = require('../../src/models');
 
 // integration test, tests the answers to the routes, of this module
@@ -20,9 +20,9 @@ describe('Auth Integration Tests', () => {
   // before each test is checked the database synchronization,
   // the whole database is erased, and a known user is created to maintain good practices
   beforeEach(async () => {
-    await UserModel.destroy({ truncate: true, force: true });
+    await Users.destroy({ truncate: true, force: true });
 
-    await UserModel.create(userDefault);
+    await Users.create(userDefault);
   });
 
   describe('POST /token', () => {

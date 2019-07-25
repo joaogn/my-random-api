@@ -28,6 +28,13 @@ class UserController {
       .catch(_.partial(Handlers.onError, res, 'Error user not find'));
   }
 
+  public getByEmail (req: Request, res: Response) {
+    User
+      .getbyEmail(req.params.email)
+      .then(_.partial(Handlers.onSucess, res))
+      .catch(_.partial(Handlers.onError, res, 'Error user not find'));
+  }
+
   public updateUser (req: Request, res: Response) {
     User
       .update(parseInt(req.params.id), req.body)

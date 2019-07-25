@@ -16,7 +16,7 @@ class Handlers {
     res.json({
       token: jwt.sign(payload, process.env.SECRET, {
         // tempo de expiração do token
-        expiresIn: 300 // expires in 5min
+        expiresIn: 3600 // expires in 60min
       })
     });
   }
