@@ -22,7 +22,7 @@
   "dependencies": {
     "@types/express-session": "^1.15.13",
     "@types/graphql": "^14.2.2",
-    "apollo-server-express": "^2.6.7",
+    "apollo-server-express": "^2.14.2",
     "bcrypt": "^3.0.6",
     "body-parse": "^0.1.0",
     "connect-redis": "^3.4.1",
